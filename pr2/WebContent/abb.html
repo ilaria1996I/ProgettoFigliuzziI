@@ -299,6 +299,17 @@
 		};
 	</script>
 
+<div class="alert alert-success fade in" id="mioAlert">
+  Ottimo! Procedura eseguita con successo
+  <button id="close" type="button" class="close" aria-hidden="true">&times;</button>
+</div>
 
+<script>
+$(function() {
+  $('#close').click(function() {
+    $('#mioAlert').alert('close');
+  });
+});
+</script>
   </body>
 </html>
