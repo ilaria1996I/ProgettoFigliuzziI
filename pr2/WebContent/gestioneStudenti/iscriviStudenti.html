@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v2 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="-../fontsR/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="../cssR/style.css">
+		
 <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-<script src="../js/jquery-3.2.1.min.js"></script>
-<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
-<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
-<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
-<link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
-<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">	
-<link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
-<link rel="stylesheet" type="text/css" href="../css/util.css">
-<link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" href="../css/fother.css">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	</head>
 
-<link href="../css/styleReg.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //Custom Theme files -->
-<!-- web font -->
-<link href="fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font -->
-
-
-<body>	
-<nav class="navbar navbar-inverse">
+	<body>
+<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-blue" role="navigation">-->	
+ <div class="container-fluid">
+	
+		<!-- Brand/logo -->
 		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 			<a class="navbar-brand" href="#">Alta Sartoria</a>
 		</div>
-
-		<div class="collapse navbar-collapse" id="myNavbar">
+		
+		<!-- Collapsible Navbar -->
+		<div class="collapse navbar-collapse" id="example-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="http://localhost:8080/pr">Home</a></li>
+				<li class="active">
+				<a href="http://localhost:8080/pr">Home <span class="sr-only">(current)</span></a></li>
+				<li><a href="http://localhost:8080/pr/doveSiamo.html">Dove siamo</a></li>
 				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
-				<li><a href="http://localhost:8080/pr/doveSiamo.html">I nostri punti vendita</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+			<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -52,65 +49,44 @@
 						
 						<li><a href="http://localhost:8080/pr/loginUtente.html"><span
 						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
-						<c:if test="${utenteNor != null}">
-						Benvenuto ${utenteNor.username};
-						<a class="dropdown-item" href="login?logout=true">Logout</a>
-						</c:if>	
-						
-						<c:if test="${utente != null}">
-						Benvenuto ${utente.username};
-						<a class="dropdown-item" href="login?logout=true">Logout</a>
-						<a class="dropdown-item" href="http://localhost:8080/pr/interfacciaSarta.html">Ordini del giorno</a>
-						</c:if>
-						
 					</ul>
-					</li>
-				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Sign Up</a></li>
+				</li>
 			</ul>
 		</div>
-	</nav>
 	
-<div class="main-w3layouts wrapper">
-	<h1>Registrati</h1>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-	<form id="modulo1" method="post"
-		action="inviaDatiStudente" class="moduloRegistrazione">
-		<input  class="campo" name="nome" type="text" value="nome" placeholder="nome" required=""/>
-		<input  class="campo"  name="cognome" type="text" value="Cognome" placeholder="Cognome" required=""/>
-		<input class="campo" name="email" type="text" placeholder="Email" required="" value="Email" />
-		<input  class="campo" name="password" type="password" placeholder="Password" required=""/>
-		<input  name="password2" type="password" placeholder="Password" required=""/>
-		<div class="wthree-text">
-		<label class="anim">
-		<input type="checkbox" class="checkbox" required="">
-		<span>I Agree To The Terms & Conditions</span>
-			</label>
-			<div class="clear"> </div>
+	</div>
+</nav>
+		<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
+			<div class="inner">
+				<form id="modulo1" method="post" action="inviaDatiStudente" class="moduloRegistrazione">
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<div class="form-wrapper">
+							<label for="">First Name</label>
+							<input  class="campo" name="nome" type="text" value="nome" placeholder="nome"/>
+						</div>
+						<div class="form-wrapper">
+							<label for="">Last Name</label>
+							<input  class="campo"  name="cognome" type="text" value="Cognome" placeholder="Cognome"/>
+						</div>
+					</div>
+					<div class="form-wrapper">
+						<label for="">Email</label>
+						<input class="campo" name="email" type="text" placeholder="Email" required="" value="Email" />
+					</div>
+					<div class="form-wrapper">
+						<input  class="campo" name="password" type="password" placeholder="Password"/>
+					</div>
+					<div class="form-wrapper">
+						<label for="">Confirm Password</label>
+						<input  name="password2" type="password" placeholder="Password">
+					</div>
+					
+					<button>Register Now</button>
+				</form>
 			</div>
-			<input type="submit" value="SIGNUP">
-			</form>
-			<p>Don't have an Account? <a href="http://localhost:8080/pr/login.html"> Login Now!</a></p>
-			
-		<!-- copyright -->
-		
-		<!-- //copyright -->
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	</div>
 		</div>
-<footer>
+ 	<footer>
     <div class="footer" id="footer">
         <div class="container">
             <div class="row">
@@ -135,20 +111,17 @@
                     </ul>
                 </div>
                
-            <!--/.row--> 
         </div>
-        <!--/.container--> 
     </div>
-    <!--/.footer-->
                           
     <div class="footer-bottom">
         <div class="container">
-            <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
+            <p class="pull-left copyright"> Copyright Â© Footer 2014. All right reserved. </p>
        
         </div>
     </div>
-    <!--/.footer-bottom--> 
+    </div>
 
-</footer>
-</body>
+</footer> 
+	</body>
 </html>

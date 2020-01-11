@@ -46,16 +46,6 @@
   	<servlet-name>PrendiOrdini</servlet-name>
   	<url-pattern>/gestioneOrdini/ottieniOrdini</url-pattern>
   </servlet-mapping>
-
-<servlet>
-  	<servlet-name>RichiediOrdine</servlet-name>
-  	<servlet-class>controller.DammiOrdine</servlet-class>
-</servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>RichiediOrdine</servlet-name>
-  	<url-pattern>/invia</url-pattern>
-  </servlet-mapping> 
   
 <servlet>
   	<servlet-name>IscrizioneOrdine</servlet-name>

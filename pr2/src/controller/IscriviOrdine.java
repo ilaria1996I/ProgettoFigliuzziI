@@ -32,8 +32,9 @@ public class IscriviOrdine extends HttpServlet{
 		
 		req.setAttribute("ordineRegistrato", ord);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("gestioneOrdini/ottieniOrdini");
+		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 		rd.forward(req, resp);
+		
 		
 		//RequestDispatcher rd = req.getRequestDispatcher("");
 		//rd.forward(req, resp);

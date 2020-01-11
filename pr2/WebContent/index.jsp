@@ -43,19 +43,30 @@
 <div id="overlay">
 <div class="spinner"></div> 
 </div>
-
-<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+	
+		<!-- Brand/logo -->
 		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
 			<a class="navbar-brand" href="#">Alta Sartoria</a>
 		</div>
-
-		<div class="collapse navbar-collapse" id="myNavbar">
+		
+		<!-- Collapsible Navbar -->
+		<div class="collapse navbar-collapse" id="example-1">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="http://localhost:8080/pr">Home</a></li>
+				<li class="active">
+				<a href="http://localhost:8080/pr">Home <span class="sr-only">(current)</span></a></li>
+				<li><a href="http://localhost:8080/pr/doveSiamo.html">Dove siamo</a></li>
 				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
-				<li><a href="http://localhost:8080/pr/doveSiamo.html">I nostri punti vendita</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+			<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -64,23 +75,13 @@
 						
 						<li><a href="http://localhost:8080/pr/loginUtente.html"><span
 						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
-						<c:if test="${utenteNor != null }">
-						Benvenuto ${utenteNor.username};
-						<a class="dropdown-item" href="login?logout=true">Logout</a>
-						</c:if>	
-						
-						<c:if test="${utente != null }">
-						Benvenuto ${utente.username};
-						<a class="dropdown-item" href="login?logout=true">Logout</a>
-						<a class="dropdown-item" href="http://localhost:8080/pr/gestioneOrdini/ottieniOrdini.jsp">Ordini del giorno</a>
-						</c:if>
-						
 					</ul>
-					</li>
-				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Sign Up</a></li>
+				</li>
 			</ul>
 		</div>
-	</nav>
+	
+	</div>
+</nav>
 
           <!--Swiper-->
           <div class="swiper-container swiper-slider" data-autoplay="5000" data-slide-effect="fade" data-loop="false">
