@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>abbigliamento</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ><!-- versione del bootstrap.css remota -->
+	<!-- Bootsrap utiliizza librereia jQuery per far funzionare il suo java script, quindi dobiamo collegare anche questa biblioteca alla nostra pagina ma sempre prima di bootstrap.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/fother.css">
+    
+     <link rel="stylesheet" type="text/css" href="loadingPage.css">
+    <!-- Stylesheets -->
+   
+	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <script>
+	 
+	 
+		
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+</head>
+
+<body onload="myFunction()">
+<div id="loading"></div>
+<body background="images/sfondoAbb1.jpg">
+<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Alta Sartoria</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="http://localhost:8080/pr">Home</a></li>
+				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
+				<li><a href="http://localhost:8080/pr/doveSiamo.html">I nostri punti vendita</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="http://localhost:8080/pr/login.html"><span
+						class="glyphicon glyphicon-log-in"></span> Amministratore</a></li>
+						
+						<li><a href="http://localhost:8080/pr/loginUtente.html"><span
+						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
+						<c:if test="${utenteNor != null}">
+						Benvenuto ${utenteNor.username};
+						<a class="dropdown-item" href="login?logout=true">Logout</a>
+						</c:if>	
+						
+						<c:if test="${utente != null}">
+						Benvenuto ${utente.username};
+						<a class="dropdown-item" href="login?logout=true">Logout</a>
+						<a class="dropdown-item" href="http://localhost:8080/pr/interfacciaSarta.html">Ordini del giorno</a>
+						</c:if>
+						
+					</ul>
+					</li>
+				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Sign Up</a></li>
+			</ul>
+		</div>
+	</nav>
+<div class="container">
+	<div class="row">
+    	<div class="col-sm-6 col-sm-5">
+        	<div class="form-request form-request-modern bg-gray-lighter novi-background">        	
+            	<h4>Fissa un appuntamento con noi: </h4>
+            		<!-- RD Mailform-->
+        		
+        		<form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
+     				<div class="row row-20 row-fix">
+   						<div class="col-sm-12">
+                        <label class="form-label-outside">Voglio fare un orlo al: </label>
+                        <div class="form-wrap form-wrap-inline">
+
+                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta1">
+                            <option value="6">    </option>
+                            <option value="1">Pantalone</option>
+                            <option value="2">Giacca</option>
+                            <option value="3">Camicia</option>
+                            <option value="4">Abito</option>
+                            <option value="5">Abito da sposa</option>  
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-12">
+                        <label class="form-label-outside">Voglio stringere:</label>
+                        <div class="form-wrap form-wrap-inline">
+                         <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta2">
+							<option value="6">    </option>
+                            <option value="1">Pantalone</option>
+                            <option value="2">Giacca</option>
+                            <option value="3">Camicia</option>
+                            <option value="4">Abito</option>
+                            <option value="5">Abito da sposa</option>
+                            
+                          </select>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-12">
+                        <label class="form-label-outside">Voglio che mi crei il modello:</label>
+                        <div class="form-wrap form-wrap-inline">
+                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta3">
+                          <option value="7">    </option>
+                            <option value="1">Abito 1</option>
+                            <option value="2">Abito 2</option>
+                            <option value="3">Abito 3</option>
+                            <option value="4">Abito 4</option>
+                            <option value="5">Abito 5</option>
+                            <option value="6">Abito 6</option>
+                           
+                          </select>
+                        </div>
+                      </div>
+                      
+        <div class="col-lg-6">
+         <label class="form-label-outside">Inserisci un commento per la sarta: </label>
+         <div class="input-group">
+  		<div class="input-group-prepend">
+  		</div>
+  		
+  		<input class="form-control" name="commento" type="text" />
+		</div>
+		<label class="form-label-outside">Scegli una data: </label>
+         <input type="test" id="datepicker" name="data" value="data" placeholder="nome" />
+        </div>
+        
+        </div>
+        	<button name="invia" style="position:absolute;top:330px;left:300px">Prenota appuntamento </button>
+        	
+			</form>
+			
+			</div>
+			
+        	 </div>
+        	 <div class="row row-24 row-fix">
+        	<iframe src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FRome&amp;src=aXQuaXRhbGlhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%231F753C&amp;title=Appuntamenti%20" style="border-width:0" width="400" height="300" frameborder="0" scrolling="no"></iframe>
+	 	
+        	</div>
+        	</div>
+        	</div>
+        	
+      <li></li><li></li><li></li>
+      
+      
+
+<section class="section section-variant-1 bg-default novi-background bg-cover"> 
+        <div class="container container-wide">
+          <div class="row row-fix justify-content-xl-end row-30 text-center text-xl-left">
+            <div class="col-xl-8">
+              <div class="parallax-text-wrap">
+                <h3>I NOSTRI MIGLIORI </h3><span class="parallax-text">MODELLI</span>
+              </div>
+              <hr class="divider divider-decorate">
+              
+          <div class="row row-50">
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/v1.jpg" alt="" width="$870" height="370"/>
+                  </figure>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#"></a></h5><span class="heading-5">Abito 1 <br> $1250<br><br></span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                
+                  <figure class="event-default-image"><img src="images/v2.jpg" alt="" width="$870" height="370"/>
+                  </figure>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#"></a></h5><span class="heading-5">Abito 2 <br> $458 <br><br></span>
+                </div>
+              </article>
+              
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/v3.jpg" alt="" width="$870" height="370"/>
+                  </figure>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#"></a></h5><span class="heading-5">Abito 3 <br> $456 <br><br></span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/v4.jpg" alt="" width="$870" height="370"/>
+                  </figure>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#"></a></h5><span class="heading-5">Abito 4 <br> $7856 <br><br></span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/v5.jpg" alt="" width="$870" height="370"/>
+                  </figure>
+                </div>
+                
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#"></a></h5><span class="heading-5">Abito 5 <br> $520</span>
+                </div>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-4">
+              <article class="event-default-wrap">
+                <div class="event-default">
+                  <figure class="event-default-image"><img src="images/v6.jpg" alt="" width="$870" height="370"/>
+                  </figure>
+                </div>
+                <div class="event-default-inner">
+                  <h5><a class="event-default-title" href="#"></a></h5><span class="heading-5">Abito 6 <br> $600</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <h11><br></h11>
+        </div>
+        </div>
+      </section>
+
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <h4> Alta sartoria</h4>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li><a class="email"href="#"> altasartoria@gmail.com </a></li>
+                        <br/>
+                        <li> <p> via slovenia, Milano </p> </li>
+                        <li> <p> via russia, Roma </p> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <ul>
+                        <li> <h5> <a href="#" style="margin-top: 5em"> ABOUT US</a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/loginUtente.html"> Login </a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/index.jsp"> Home </a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/index.jsp"> Abbigliamento </a> <h5></li>
+                    </ul>
+                </div>
+               
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+                          
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
+       
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+
+</footer>
+
+<script>
+		// $(document).ready(function(){
+			// 	$('div#loading').removeAttr('id');
+		// });
+		var preloader = document.getElementById("loading");
+		// window.addEventListener('load', function(){
+		// 	preloader.style.display = 'none';
+		// 	})
+
+		function myFunction(){
+			preloader.style.display = 'none';
+		};
+	</script>
+
+
+  </body>
+</html>

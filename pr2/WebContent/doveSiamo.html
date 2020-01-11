@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<LINK rel="mapsSheet" href="css/maps.css" type="text/css">
+<link rel="stylesheet" href="css/fother.css">
+<link href="jquery-ui.css" rel="stylesheet">
+
+</head>
+
+<!-- <body> -->
+<body background="images/sfondoAbb2.jpg">
+
+<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Alta Sartoria</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="http://localhost:8080/pr">Home</a></li>
+				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
+				<li><a href="http://localhost:8080/pr/doveSiamo.html">I nostri punti vendita</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="http://localhost:8080/pr/login.html"><span
+						class="glyphicon glyphicon-log-in"></span> Amministratore</a></li>
+						
+						<li><a href="http://localhost:8080/pr/loginUtente.html"><span
+						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
+						<c:if test="${utenteNor != null}">
+						Benvenuto ${utenteNor.username};
+						<a class="dropdown-item" href="login?logout=true">Logout</a>
+						</c:if>	
+						
+						<c:if test="${utente != null}">
+						Benvenuto ${utente.username};
+						<a class="dropdown-item" href="login?logout=true">Logout</a>
+						<a class="dropdown-item" href="http://localhost:8080/pr/interfacciaSarta.html">Ordini del giorno</a>
+						</c:if>
+						
+					</ul>
+					</li>
+				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Sign Up</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div style='margin:15px; padding:10px;'>
+	<div class="row big-padding" id="two-columns">
+		<div class="col-sm-6">
+			<h1>I nostri store</h1>
+			<p class="lead">Per essere ancora più vicini ai nostri clienti abbiamo aperto molti punti vendita, spazi accoglienti e moderni dove puoi trovare tutte le grandi marche.I negozi dove è davvero possibile immergersi nell'alta moda italiana.</p>
+			<div class="container">
+			<div class="row big-padding animated fadeInUp" id="four-columns">
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 1</h3>
+			<p>88900 Crotone KR <br>Via Slovenia<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 2</h3>
+			<p>Attilia <br>Via fontana superiore<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 3</h3>
+			<p>Montalto Uffugo <br>Via fontana superiore<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 4</h3>
+			<p>Settimo <br>Via fontana superiore<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 5</h3>
+			<p>Reggio di calabria <br>Via fontana superiore<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 6</h3>
+			<p>Catanzaro<br>Via fontana superiore<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 7</h3>
+			<p>Vibo valentia<br>Via fontana superiore<br>numero di telefono:0101010101</p>
+			</div>
+			<div class="col-md-4 col-xs-6">
+			<h3>Store 8</h3>
+			<p>Rende<br>Quattromiglia<br>numero di telefono:0101010101</p>
+			</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<div style='margin:15px; padding:10px; '>	
+	<div class="row big-padding" id="two-columns">
+		<div class="col-sm-8">
+  		<div class="google-maps">
+  		<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I nostri store in Italia</h1>
+  		<p>Questa non è una semplice mappa clicca sul primo bottone e poi scegli uno store per trovare la strada piu veloce per raggiungerci!!</p>
+		<iframe
+			src="https://www.google.com/maps/d/u/0/embed?mid=1QDzpwpyCdjcqfsjgM3C4bpacSf55yQdy"
+			width="640" height="480"></iframe>
+			
+			
+		</div>
+		</div>
+		
+		<div class="col-sm-4">
+		<h2>Contatti sede principale</h2>
+		<p><strong>Via Moggia, 75/A
+			<br>00118 RM
+			<br>Telefono 0185 31571
+			<br>Fax 0185 321510</p>
+		</div>
+		</div>
+	</div>
+
+	<div style='margin:15px; padding:10px; /* background-color:#f0f8ff */'>
+	<h2 class="demoHeaders">Domande frequenti</h2>
+	<div id="accordion">
+	<h3><ul> 01. Come arrivare alla location?</h3>
+	<div>Clicca sul primo bottone della mappa scegli uno store e trova la strada piu vicina per raggiungerci! Ti aspettiamo !!!</div>
+	<h3><ul>02. In quanto tempo si realizza una riparazione ?</h3>
+	<div>Generalmente in due / tre giorni. </div>
+	<h3><ul> 03. In quanto tempo si realizza un abito?</h3>
+	<div>Generalmente in 15/20 giorni.</div>
+	</div>
+	</div>
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <h4> Alta sartoria </h4>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li><a class="email"href="#"> altasartoria@gmail.com </a></li>
+                        <br/>
+                        <li> <p> via slovenia, Milano </p> </li>
+                        <li> <p> via russia, Roma </p> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <ul>
+                        <li> <h5> <a href="#" style="margin-top: 5em"> ABOUT US</a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/loginUtente.html"> Login </a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/index.jsp"> Home </a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/index.jsp"> Abbigliamento </a> <h5></li>
+                    </ul>
+                </div>
+               
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+                          
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
+       
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+
+</footer>
+<script src="external/jquery/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+
+<script>
+$( "#accordion" ).accordion();
+
+</script>
+</body>
+</html>

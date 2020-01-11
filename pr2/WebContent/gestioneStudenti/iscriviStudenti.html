@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+
+<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="icon" type="image/png" href="../images/icons/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="../vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="../vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="../vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="../vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="../vendor/select2/select2.min.css">	
+<link rel="stylesheet" type="text/css" href="../vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="../css/util.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" href="../css/fother.css">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href="../css/styleReg.css" rel="stylesheet" type="text/css" media="all" />
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+
+
+<body>	
+<nav class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Alta Sartoria</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="http://localhost:8080/pr">Home</a></li>
+				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
+				<li><a href="http://localhost:8080/pr/doveSiamo.html">I nostri punti vendita</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="http://localhost:8080/pr/login.html"><span
+						class="glyphicon glyphicon-log-in"></span> Amministratore</a></li>
+						
+						<li><a href="http://localhost:8080/pr/loginUtente.html"><span
+						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
+						<c:if test="${utenteNor != null}">
+						Benvenuto ${utenteNor.username};
+						<a class="dropdown-item" href="login?logout=true">Logout</a>
+						</c:if>	
+						
+						<c:if test="${utente != null}">
+						Benvenuto ${utente.username};
+						<a class="dropdown-item" href="login?logout=true">Logout</a>
+						<a class="dropdown-item" href="http://localhost:8080/pr/interfacciaSarta.html">Ordini del giorno</a>
+						</c:if>
+						
+					</ul>
+					</li>
+				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Sign Up</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+<div class="main-w3layouts wrapper">
+	<h1>Registrati</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+	<form id="modulo1" method="post"
+		action="inviaDatiStudente" class="moduloRegistrazione">
+		<input  class="campo" name="nome" type="text" value="nome" placeholder="nome" required=""/>
+		<input  class="campo"  name="cognome" type="text" value="Cognome" placeholder="Cognome" required=""/>
+		<input class="campo" name="email" type="text" placeholder="Email" required="" value="Email" />
+		<input  class="campo" name="password" type="password" placeholder="Password" required=""/>
+		<input  name="password2" type="password" placeholder="Password" required=""/>
+		<div class="wthree-text">
+		<label class="anim">
+		<input type="checkbox" class="checkbox" required="">
+		<span>I Agree To The Terms & Conditions</span>
+			</label>
+			<div class="clear"> </div>
+			</div>
+			<input type="submit" value="SIGNUP">
+			</form>
+			<p>Don't have an Account? <a href="http://localhost:8080/pr/login.html"> Login Now!</a></p>
+			
+		<!-- copyright -->
+		
+		<!-- //copyright -->
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	</div>
+		</div>
+<footer>
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <h4> Alta sartoria </h4>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <h3> Contact </h3>
+                    <ul>
+                        <li><a class="email"href="#"> altasartoria@gmail.com </a></li>
+                        <br/>
+                        <li> <p> via slovenia, Milano </p> </li>
+                        <li> <p> via russia, Roma </p> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-sm-2 col-xs-3">
+                    <ul>
+                        <li> <h5> <a href="#" style="margin-top: 5em"> ABOUT US</a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/loginUtente.html"> Login </a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/index.jsp"> Home </a> <h5></li>
+                        <li> <h5><a href="http://localhost:8080/pr/index.jsp"> Abbigliamento </a> <h5></li>
+                    </ul>
+                </div>
+               
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+                          
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
+       
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+
+</footer>
+</body>
+</html>
