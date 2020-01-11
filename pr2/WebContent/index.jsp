@@ -72,7 +72,7 @@
 						<c:if test="${utente != null }">
 						Benvenuto ${utente.username};
 						<a class="dropdown-item" href="login?logout=true">Logout</a>
-						<a class="dropdown-item" href="http://localhost:8080/pr/interfacciaSarta.html">Ordini del giorno</a>
+						<a class="dropdown-item" href="http://localhost:8080/pr/gestioneOrdini/ottieniOrdini.jsp">Ordini del giorno</a>
 						</c:if>
 						
 					</ul>
