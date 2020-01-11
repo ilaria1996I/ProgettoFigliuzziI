@@ -15,11 +15,11 @@ public class DammiOrdine extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Ordine> ordini = DBManager.getInstance().dammiOrdine();
 		
-		req.setAttribute("ordine", ordini);
+		req.setAttribute("ordini", ordini);
 		
 		RequestDispatcher rd = req.getRequestDispatcher("ottieniOrdini.jsp");
 		rd.forward(req, resp);
-		System.out.println("Ciao??");
+		System.out.println("dammi ordini");
 		
 }
 	

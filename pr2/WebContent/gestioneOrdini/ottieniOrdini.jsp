@@ -23,7 +23,7 @@
 	<table class="table">
 		<tr class="success">
 			<th>
-				Nome
+				Codice
 			</th>
 			<th>
 				Cognome
@@ -45,7 +45,7 @@
 			
 			<tr class="${colore}">
 				<td>
-					${ordini.commento}
+					${ordine.codice}
 				</td>
 				<td>
 					${ordine.commento}

@@ -16,7 +16,6 @@
 </head>
 <body>
 	<c:if test="${studenteRegistrato != null}">
-		<h1>Utente ${studenteRegistrato.cognome} registrato con successo</h1>
 	</c:if>
 	<header>
 		<h1>Elenco Studenti</h1>

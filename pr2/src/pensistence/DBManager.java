@@ -87,19 +87,21 @@ private static DBManager instance = null;
 	}
 
 	public void inserisciOrdine(Ordine ord) {
-		ordine.add(ord);
+		getOrdineDAO().save(ord);
 		
 	}
 
 	public List<Ordine> dammiOrdine() {
-		return ordine;
+		return getOrdineDAO().findAll();
 	}
 
 	public ClienteDao getClienteDAO() {
 		return new ClienteDaoJDBC(dataSource);
 	}
 	
-	public OrdineDao getScuolaDAO() {
+	public OrdineDaoJDBC getOrdineDAO() {
 		return new OrdineDaoJDBC(dataSource);
 	}
+	
+	
 }

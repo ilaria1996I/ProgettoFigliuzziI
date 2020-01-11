@@ -23,10 +23,11 @@ public class OrdineDaoJDBC implements OrdineDao {
 		Connection connection = null;
 		try {
 			connection = this.dataSource.getConnection();
-			String insert = "insert into ordine(codice, VoglioStringere, voglioCheMiCreiIlModello,"
-					+ " commento, data, voglioFareUnOrdineAl) values (?,?,?,?,?,?)";
+			String insert = "insert into ordine(codice,vogliostringere,vogliochemicreiilmodello,"
+					+ "commento,data,vogliofareunordineal) values (?,?,?,?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert);
-			statement.setInt(1, ordine.getCodice());
+			long id = IdBroker.getId(connection);
+			statement.setLong(1, id);
 			statement.setString(2, ordine.getVoglioStringere());
 			statement.setString(3, ordine.getVoglioCheMiCreiIlModello());
 			statement.setString(4, ordine.getCommento());
