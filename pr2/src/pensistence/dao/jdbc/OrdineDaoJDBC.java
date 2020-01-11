@@ -18,7 +18,7 @@ public class OrdineDaoJDBC implements OrdineDao {
 	public OrdineDaoJDBC(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-
+	
 	public void save(Ordine ordine) {
 		Connection connection = null;
 		try {
@@ -33,10 +33,13 @@ public class OrdineDaoJDBC implements OrdineDao {
 			statement.setString(4, ordine.getCommento());
 			statement.setString(5, ordine.getData());
 			statement.setString(6, ordine.getVoglioFareUnOrdineAl());
+			
 //			statement.setLong(5, ordine.getScuolaDiDiploma().getId()); 
 //			statement.setLong(5, studente.get.getScuolaDiDiploma().getId());
 			statement.executeUpdate();
-		} catch (SQLException e) {
+
+			//System.out.printf(ordine.getVoglioStringere(),ordine.getVoglioCheMiCreiIlModello(),ordine.getCommento(),ordine.getData(),ordine.getVoglioFareUnOrdineAl());
+			} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
 		} finally {
 			try {
@@ -60,9 +63,11 @@ public class OrdineDaoJDBC implements OrdineDao {
 			if (result.next()) {
 				ordine = new Ordine();
 				ordine.setCodice(result.getInt("codice"));				
-				ordine.setVoglioStringere(result.getString("VoglioStringere"));
-				ordine.setVoglioCheMiCreiIlModello(result.getString("voglioCheMiCreiIlModello"));
+				ordine.setVogliostringere(result.getString("vogliostringere"));
+				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliochemicreiilmodello"));
 				ordine.setCommento(result.getString("commento"));
+				ordine.setData(result.getString("data"));
+				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliofareunordineal"));
 				
 			//	Scuola scuola = DBManager.getInstance().getScuolaDAO().findByPrimaryKey(result.getLong("scuola"));
 			//	studente.setScuolaDiDiploma(scuola);
@@ -96,9 +101,11 @@ public class OrdineDaoJDBC implements OrdineDao {
 			while (result.next()) {
 				ordine = new Ordine();
 				ordine.setCodice(result.getInt("codice"));				
-				ordine.setVoglioStringere(result.getString("VoglioStringere"));
+				ordine.setVogliostringere(result.getString("VoglioStringere"));
 				ordine.setVoglioCheMiCreiIlModello(result.getString("voglioCheMiCreiIlModello"));
 				ordine.setCommento(result.getString("commento"));
+				ordine.setData(result.getString("data"));
+				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliofareunordineal"));
 				
 				//al posto di scuola mettere utenteNor
 			//	Clienti utenteNor = DBManager.getInstance().getUtenteNorDAO().findByPrimaryKey(result.getString("numClienteO"));
@@ -121,33 +128,7 @@ public class OrdineDaoJDBC implements OrdineDao {
 		return ord;
 	}
 
-	public void update(Ordine ordine) {
-		Connection connection = null;
-		try {
-			connection = this.dataSource.getConnection();
-			String update = "update studente SET nome = ?, cognome = ?, data_nascita = ?, scuola = ?, corsodilaurea = ? WHERE matricola=?";
-			PreparedStatement statement = connection.prepareStatement(update);
-			statement.setInt(1, ordine.getCodice());
-			statement.setString(2, ordine.getVoglioStringere());
-			statement.setString(3, ordine.getVoglioCheMiCreiIlModello());
-			statement.setString(4, ordine.getCommento());
-			statement.setString(5, ordine.getData());
-			statement.setString(6, ordine.getVoglioFareUnOrdineAl());
-			
-			//statement.setLong(4, studente.getScuolaDiDiploma().getId());
-			//statement.setLong(5, studente.getCorsoDiLaurea().getId());
-		
-			statement.executeUpdate();
-		} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new RuntimeException(e.getMessage());
-			}
-		}
-	}
+
 
 	
 }

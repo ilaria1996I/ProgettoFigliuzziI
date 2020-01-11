@@ -15,9 +15,17 @@ public class IscriviOrdine extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String commento = req.getParameter("commento");
+		String scelta1 = req.getParameter("scelta1");
+		String scelta2 = req.getParameter("scelta2");
+		String scelta3 = req.getParameter("scelta3");
+		String data2 = req.getParameter("data");
 		
 		Ordine ord = new Ordine();
 		ord.setCommento(commento);
+		ord.setVoglioFareUnOrdineAl(scelta1);
+		ord.setVogliostringere(scelta2);
+		ord.setVoglioCheMiCreiIlModello(scelta3);
+		ord.setData(data2);
 		
 		
 		DBManager.getInstance().inserisciOrdine(ord);

@@ -15,6 +15,7 @@
 
 </head>
 <body>
+
 	<c:if test="${ordineRegistrato!= null}">
 			
 	<header>
@@ -26,13 +27,16 @@
 				Codice
 			</th>
 			<th>
-				Cognome
+				Azione 1
 			</th>
 			<th>
-				Email
+				Azione 2
 			</th>
 			<th>
-				Password
+				Commento
+			</th>
+			<th>
+				Data prevista di consegna
 			</th>
 		</tr>
 		<c:set var = "cont" scope = "request" value ="${0}" />
@@ -47,14 +51,20 @@
 				<td>
 					${ordine.codice}
 				</td>
+				 <td>
+					${ordine.voglioStringere}
+				</td>   
 				<td>
-					${ordine.commento}
+					${ordine.voglioCheMiCreiIlModello}
 				</td>
 				<td>
 					${ordine.commento}
 				</td>
 				<td>
-					${ordine.commento}
+					${ordine.data}
+				</td>
+				<td>
+					${ordine.voglioFareUnOrdineAl}
 				</td>
 			</tr>
 		</c:forEach>

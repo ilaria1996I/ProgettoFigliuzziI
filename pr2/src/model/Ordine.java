@@ -2,34 +2,33 @@ package model;
 
 public class Ordine {
 	private int codice;
-	private String VoglioStringere;
-	private String voglioCheMiCreiIlModello;
+	private String vogliostringere;
+	private String vogliochemicreiilmodello;
 	private String commento;
 	private String data;
-	private String voglioFareUnOrdineAl;
+	private String vogliofareunordineal;
 	
+	public void setVogliostringere(String vogliostringere) {
+		this.vogliostringere = vogliostringere;
+	}
 	public String getVoglioFareUnOrdineAl() {
-		return voglioFareUnOrdineAl;
+		return vogliofareunordineal;
 	}
 
-	public void setVoglioFareUnOrdineAl(String voglioFareUnOrdineAl) {
-		this.voglioFareUnOrdineAl = voglioFareUnOrdineAl;
+	public void setVoglioFareUnOrdineAl(String vogliofareunordineal) {
+		this.vogliofareunordineal = vogliofareunordineal;
 	}
 
 	public String getVoglioStringere() {
-		return VoglioStringere;
+		return vogliostringere;
 	}
-
-	public void setVoglioStringere(String voglioStringere) {
-		VoglioStringere = voglioStringere;
-	}
-
+	
 	public String getVoglioCheMiCreiIlModello() {
-		return voglioCheMiCreiIlModello;
+		return vogliochemicreiilmodello;
 	}
 
-	public void setVoglioCheMiCreiIlModello(String voglioCheMiCreiIlModello) {
-		this.voglioCheMiCreiIlModello = voglioCheMiCreiIlModello;
+	public void setVoglioCheMiCreiIlModello(String vogliochemicreiilmodello) {
+		this.vogliochemicreiilmodello = vogliochemicreiilmodello;
 	}
 
 	public String getCommento() {
@@ -55,6 +54,4 @@ public class Ordine {
 	public void setCodice(int codice) {
 		this.codice = codice;
 	}
-
-	
-	}
+}

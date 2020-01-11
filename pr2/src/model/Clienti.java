@@ -6,15 +6,6 @@ public class Clienti {
 	private String cognome;
 	private String email;
 	private String password;
-	private String matricola;
-
-	public String getMatricola() {
-		return matricola;
-	}
-	
-	public void setMatricola(String matricola) {
-		this.matricola = matricola;
-	}
 	
 	public String getPassword() {
 		return password;
