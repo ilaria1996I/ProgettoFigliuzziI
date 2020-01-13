@@ -32,7 +32,7 @@ public class IscriviOrdine extends HttpServlet{
 		
 		req.setAttribute("ordineRegistrato", ord);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("futuriA2.html");
 		rd.forward(req, resp);
 		
 		
