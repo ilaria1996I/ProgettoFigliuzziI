@@ -57,17 +57,15 @@
   	<url-pattern>/inviaDatiOrdine</url-pattern>
   </servlet-mapping>  
 
-  
-  <servlet>
+   <servlet>
   	<servlet-name>PrendiStudenti</servlet-name>
-  	<servlet-class>controller.DammiStudenti</servlet-class>
+  	<servlet-class>controller.DammiFuturiA</servlet-class>
   </servlet>
   
   <servlet-mapping>
   	<servlet-name>PrendiStudenti</servlet-name>
   	<url-pattern>/gestioneStudenti/ottieniStudenti</url-pattern>
   </servlet-mapping>
-  
 <servlet>
   	<servlet-name>IscrizioneStudente</servlet-name>
   	<servlet-class>controller.IscriviStudente</servlet-class>

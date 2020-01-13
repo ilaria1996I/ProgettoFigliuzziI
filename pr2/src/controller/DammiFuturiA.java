@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Clienti;
 import pensistence.DBManager;
 
-public class DammiStudenti extends HttpServlet{
+public class DammiFuturiA extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Clienti> clienti = DBManager.getInstance().dammiStudenti();

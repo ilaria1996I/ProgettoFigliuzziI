@@ -13,13 +13,15 @@ import pensistence.dao.jdbc.OrdineDaoJDBC;
 public class DBManager {
 	private static  DataSource dataSource;
 
-	static {
+	static { 
 		 try {
 			Class.forName("org.postgresql.Driver").newInstance();
 			//questi vanno messi in file di configurazione!!!	
 //			dataSource=new DataSource("jdbc:postgresql://52.39.164.176:5432/xx","xx","p@xx");
 			dataSource=new DataSource("jdbc:postgresql://localhost:5432/altasartoria"
 					+ "","postgres","gaetano27");
+//			dataSource=new DataSource("postgres://bgobesop:PHOyAAl31WGcKS0xEXHsYmvw_3bFPZGa@rajje.db.elephantsql.com:5432/bgobesop"
+//					+ "","bgobesop","PHOyAAl31WGcKS0xEXHsYmvw_3bFPZGa");
 		} 
 		catch (Exception e) {
 			System.err.println("PostgresDAOFactory.class: failed to load MySQL JDBC driver\n"+e);
