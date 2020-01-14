@@ -8,5 +8,6 @@ public interface ClienteDao {
 	
 	public void save(Clienti cliente);  // Create
 	public Clienti findByPrimaryKey(int numCliente);     // Retrieve 
-	public List<Clienti> findAll(); 
+	public List<Clienti> findAll();
+	public Boolean loginRicerca(String id, String pass);
 }

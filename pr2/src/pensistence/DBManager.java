@@ -12,7 +12,8 @@ import pensistence.dao.jdbc.OrdineDaoJDBC;
 
 public class DBManager {
 	private static  DataSource dataSource;
-
+	static ClienteDaoJDBC ClienteDaoJDBC;
+	
 	static { 
 		 try {
 			Class.forName("org.postgresql.Driver").newInstance();
@@ -57,27 +58,34 @@ private static DBManager instance = null;
 	//utente cliente
 	public UtenteNor loginNor(String usernameN, String passwordN) {
 		System.out.println(usernameN + passwordN);
-		if (usernameN.equals("ilaria") && passwordN.equals("ilaria") ) {
-			System.out.println("sei un cliente");
-			UtenteNor un = new UtenteNor();
-			un.setUsername("ilaria");
-			un.setPassword("ilaria");
+		UtenteNor un = new UtenteNor();
+		if (getClienteDAO().loginRicerca(usernameN, passwordN) == true) {
 			return un;
-		}
+			}
+//		if (usernameN.equals("ilaria") && passwordN.equals("ilaria") ) {
+//			System.out.println("sei un cliente");
+//			UtenteNor un = new UtenteNor();
+//			un.setUsername("ilaria");
+//			un.setPassword("ilaria");
+//			return un;
+//		}
+//		return null;
 		return null;
 	}
 	
 	public Utente login(String username, String password) {
-		System.out.println("qua "+username + password);
+		Utente u = new Utente();
+		
 		if (username.equals("admin") && password.equals("password")) {
-			System.out.println("sei un admin");
-			Utente u = new Utente();
+			
 			u.setUsername("admin");
 			u.setPassword("password");
-			return u;
+			
 		}
 		return null;
+		
 	}
+
 
 	public void  inserisciStudente(Clienti cliente) {
 		getClienteDAO().save(cliente);
@@ -87,6 +95,7 @@ private static DBManager instance = null;
 	public List<Clienti> dammiStudenti() {
 		return getClienteDAO().findAll();
 	}
+	
 
 	public void inserisciOrdine(Ordine ord) {
 		getOrdineDAO().save(ord);

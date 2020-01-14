@@ -30,9 +30,7 @@ public class ClienteDaoJDBC implements ClienteDao {
 			statement.setString(3, cliente.getCognome());
 			statement.setString(4, cliente.getEmail());
 			statement.setString(5, cliente.getPassword());
-			System.out.println("dentro qua");
-// 			statement.setLong(5, cliente.getPassword().getId());
-//			statement.setLong(5, studente.get.getScuolaDiDiploma().getId());
+			
 			statement.executeUpdate();
 			} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
@@ -64,11 +62,6 @@ public class ClienteDaoJDBC implements ClienteDao {
 				cliente.setEmail(result.getString("email"));
 				cliente.setPassword(result.getString("password"));
 				
-				//Scuola scuola = DBManager.getInstance().getScuolaDAO().findByPrimaryKey(result.getLong("scuola"));
-				//studente.setScuolaDiDiploma(scuola);
-				
-				//CorsoDiLaurea corsoDiLaurea = DBManager.getInstance().getCorsoDiLaureaDAO().findByPrimaryKey(result.getLong("corsodilaurea"));
-				//studente.setCorsoDiLaurea(corsoDiLaurea);
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
@@ -111,5 +104,36 @@ public class ClienteDaoJDBC implements ClienteDao {
 			}
 		}
 		return clie;
+	}
+
+	public Boolean loginRicerca(String id, String pass) {
+		Connection connection = null;
+		try {
+			connection = this.dataSource.getConnection();
+			PreparedStatement statement;
+			String query = "select * from clienti";
+			statement = connection.prepareStatement(query);
+			ResultSet result = statement.executeQuery();
+			String username;
+			String password;
+			
+			while (result.next()) {
+				username = result.getString("email");
+				password = result.getString("password");
+				if(username.equalsIgnoreCase(id) &&  password.equalsIgnoreCase(pass)) {
+					return true;
+				}
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		}	 finally {
+			try {
+				if (connection != null)
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		return false;
 	}
 }
