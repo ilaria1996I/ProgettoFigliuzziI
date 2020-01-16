@@ -12,7 +12,6 @@ public class Ordine {
 		this.vogliostringere = vogliostringere;
 	}
 	public String getVoglioFareUnOrdineAl() {
-		System.out.println("Daordine"+vogliofareunordineal);
 		return vogliofareunordineal;
 	}
 

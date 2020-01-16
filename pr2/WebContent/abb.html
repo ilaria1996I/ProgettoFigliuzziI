@@ -5,7 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" ><!-- versione del bootstrap.css remota -->
-	<!-- Bootsrap utiliizza librereia jQuery per far funzionare il suo java script, quindi dobiamo collegare anche questa biblioteca alla nostra pagina ma sempre prima di bootstrap.js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta name="format-detection" content="telephone=no">
@@ -28,10 +27,6 @@
 		      outputFormat: 'dd/MM/yyyy',
 		    });
 		});
-		
- /*  $( function() {
-    $( "#datepicker" ).datepicker();
-  } ); */
   </script>
 </head>
 
@@ -61,7 +56,6 @@
 				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -72,6 +66,7 @@
 						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
 					</ul>
 				</li>
+				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
 			</ul>
 		</div>
 	
@@ -82,79 +77,8 @@
     	<div class="col-sm-6 col-sm-5">
         	<div class="form-request form-request-modern bg-gray-lighter novi-background">        	
             	<h4>Fissa un appuntamento con noi: </h4>
-            		<!-- RD Mailform-->
-        		
-        		<!-- <form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
-     				<div class="row row-20 row-fix">
-                      <div class="col-sm-12">
-                        <label class="form-label-outside">Voglio fare un orlo al: </label>
-                        <div class="form-wrap form-wrap-inline">
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta1">
-                            <option value=" ">    </option>
-                            <option value="Pantalone">Pantalone</option>
-                            <option value="Giacca">Giacca</option>
-                            <option value="Camicia">Camicia</option>
-                            <option value="Abito">Abito</option>
-                            <option value="Abito da sposa">Abito da sposa</option> 
-                          </select>
-                        </div>
-                      </div>
-                      
-                      <div class="col-sm-12">
-                        <label class="form-label-outside">Voglio stringere:</label>
-                        <div class="form-wrap form-wrap-inline">
-                         <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta2">
-							<option value=" ">    </option>
-                            <option value="Pantalone">Pantalone</option>
-                            <option value="Giacca">Giacca</option>
-                            <option value="Camicia">Camicia</option>
-                            <option value="Abito">Abito</option>
-                            <option value="Abito da sposa">Abito da sposa</option>     
-                          </select>
-                        </div>
-                      </div>
-                      
-                      <div class="col-sm-12">
-                        <label class="form-label-outside">Voglio che mi crei il modello:</label>
-                        <div class="form-wrap form-wrap-inline">
-                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta3">
-                          <option value=" ">    </option>
-                            <option value="Abito 1">Abito 1</option>
-                            <option value="Abito 2">Abito 2</option>
-                            <option value="Abito 3">Abito 3</option>
-                            <option value="Abito 4">Abito 4</option>
-                            <option value="Abito 5">Abito 5</option>
-                            <option value="Abito 6">Abito 6</option>
-  
-                          </select>
-                        </div>
-                      </div>
-                      
-        <div class="col-lg-6">
-         <label class="form-label-outside">Inserisci un commento per la sarta: </label>
-         <div class="input-group">
-  		<div class="input-group-prepend">
-  		</div>
-  		
-  		<input class="form-control" name="commento" type="text" />
-		</div>
-		<label class="form-label-outside">Scegli una data: </label>
-         <input type="test" id="datepicker" name="data" value="data" placeholder="nome" />
-        </div>
-        
-        </div>
-        	<button name="invia" style="position:absolute;top:330px;left:300px">Prenota appuntamento </button>
-        	
-			</form>
-	 -->
-	 <form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
-  <!-- <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div> -->
-
-  <div class="form-group">
+            	 <form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
+ <div class="form-group">
     <label class="form-label-outside">Voglio fare un orlo al: </label>
      <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta1">
      	<option value=" ">    </option>

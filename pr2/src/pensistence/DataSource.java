@@ -13,7 +13,6 @@ public class DataSource {
 	public DataSource(String uri, String username, String password) {
 		super();
 		this.uri = uri;
-//		this.port = port;
 		this.username = username;
 		this.password = password;
 	}

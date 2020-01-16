@@ -32,9 +32,7 @@
     <link rel="load" href="css/loadingPage.css">
     <script src="js/main.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/load.js"></script>
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
-    
+    <script src="js/load.js"></script>  
     <link rel="stylesheet" href="loadingPage.css">
   </head>
 
@@ -43,7 +41,7 @@
 <div id="overlay">
 <div class="spinner"></div> 
 </div>
-	<nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
 	<div class="container-fluid">
 	
 		<!-- Brand/logo -->
@@ -66,7 +64,6 @@
 				<li><a href="http://localhost:8080/pr/abb.html">Abbigliamento</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-			<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -77,12 +74,12 @@
 						class="glyphicon glyphicon-log-in"></span> Utente</a></li>
 					</ul>
 				</li>
+				<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
 			</ul>
 		</div>
 	
 	</div>
 </nav>
-
           <!--Swiper-->
           <div class="swiper-container swiper-slider" data-autoplay="5000" data-slide-effect="fade" data-loop="false">
             <div class="jumbotron text-center">
