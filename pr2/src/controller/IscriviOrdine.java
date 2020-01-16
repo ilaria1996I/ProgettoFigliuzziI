@@ -20,25 +20,19 @@ public class IscriviOrdine extends HttpServlet{
 		String scelta3 = req.getParameter("scelta3");
 		String data2 = req.getParameter("data");
 		
+		
 		Ordine ord = new Ordine();
 		ord.setCommento(commento);
-		ord.setVoglioFareUnOrdineAl(scelta1);
 		ord.setVogliostringere(scelta2);
+		ord.setVoglioFareUnOrdineAl(scelta1);
 		ord.setVoglioCheMiCreiIlModello(scelta3);
 		ord.setData(data2);
-		
+		System.out.println("orlo "+scelta1+"     stringere "+ scelta2+"   modello "+scelta3);
 		
 		DBManager.getInstance().inserisciOrdine(ord);
 		
 		req.setAttribute("ordineRegistrato", ord);
-		
 		RequestDispatcher rd = req.getRequestDispatcher("futuriA2.html");
-		rd.forward(req, resp);
-		
-		
-		//RequestDispatcher rd = req.getRequestDispatcher("");
-		//rd.forward(req, resp);
-		
-		System.out.println(ord.getCommento());
+		rd.forward(req, resp);	
 	}
 }

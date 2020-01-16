@@ -33,21 +33,12 @@ public class OrdineDaoJDBC implements OrdineDao {
 			statement.setString(4, ordine.getCommento());
 			statement.setString(5, ordine.getData());
 			statement.setString(6, ordine.getVoglioFareUnOrdineAl());
-			
-//			statement.setLong(5, ordine.getScuolaDiDiploma().getId()); 
-//			statement.setLong(5, studente.get.getScuolaDiDiploma().getId());
 			statement.executeUpdate();
 
-			//System.out.printf(ordine.getVoglioStringere(),ordine.getVoglioCheMiCreiIlModello(),ordine.getCommento(),ordine.getData(),ordine.getVoglioFareUnOrdineAl());
-			} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
-			try {
-				connection.close();
-			} catch (SQLException e) {
-				throw new RuntimeException(e.getMessage());
-			}
-		}
+			connection.close();	
+		} catch (SQLException e) {
+e.printStackTrace();
+		} 
 	}  
 
 	public Ordine findByPrimaryKey(int codice) {
@@ -67,13 +58,7 @@ public class OrdineDaoJDBC implements OrdineDao {
 				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliochemicreiilmodello"));
 				ordine.setCommento(result.getString("commento"));
 				ordine.setData(result.getString("data"));
-				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliofareunordineal"));
-				
-			//	Scuola scuola = DBManager.getInstance().getScuolaDAO().findByPrimaryKey(result.getLong("scuola"));
-			//	studente.setScuolaDiDiploma(scuola);
-				
-			//	CorsoDiLaurea corsoDiLaurea = DBManager.getInstance().getCorsoDiLaureaDAO().findByPrimaryKey(result.getLong("corsodilaurea"));
-			//	studente.setCorsoDiLaurea(corsoDiLaurea);
+				ordine.setVoglioFareUnOrdineAl(result.getString("vogliofareunordineal"));
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage());
@@ -87,7 +72,7 @@ public class OrdineDaoJDBC implements OrdineDao {
 		return ordine;
 	}
 	
-
+//ottieni jsp
 	public List<Ordine> findAll() {
 		Connection connection = null;
 		List<Ordine> ord = new LinkedList<>();
@@ -101,18 +86,11 @@ public class OrdineDaoJDBC implements OrdineDao {
 			while (result.next()) {
 				ordine = new Ordine();
 				ordine.setCodice(result.getInt("codice"));				
-				ordine.setVogliostringere(result.getString("VoglioStringere"));
-				ordine.setVoglioCheMiCreiIlModello(result.getString("voglioCheMiCreiIlModello"));
+				ordine.setVogliostringere(result.getString("vogliostringere"));
+				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliochemicreiilmodello"));
 				ordine.setCommento(result.getString("commento"));
 				ordine.setData(result.getString("data"));
-				ordine.setVoglioCheMiCreiIlModello(result.getString("vogliofareunordineal"));
-				
-				//al posto di scuola mettere utenteNor
-			//	Clienti utenteNor = DBManager.getInstance().getUtenteNorDAO().findByPrimaryKey(result.getString("numClienteO"));
-			//	utenteNor.setScuolaDiDiploma(scuola);
-				
-			//	CorsoDiLaurea corsoDiLaurea = DBManager.getInstance().getCorsoDiLaureaDAO().findByPrimaryKey(result.getLong("corsodilaurea"));
-			//	studente.setCorsoDiLaurea(corsoDiLaurea);
+				ordine.setVoglioFareUnOrdineAl(result.getString("vogliofareunordineal"));
 				
 				ord.add(ordine);
 			}

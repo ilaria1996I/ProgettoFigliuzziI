@@ -17,12 +17,8 @@ public class DBManager {
 	static { 
 		 try {
 			Class.forName("org.postgresql.Driver").newInstance();
-			//questi vanno messi in file di configurazione!!!	
-//			dataSource=new DataSource("jdbc:postgresql://52.39.164.176:5432/xx","xx","p@xx");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5432/altasartoria"
-					+ "","postgres","gaetano27");
-//			dataSource=new DataSource("postgres://bgobesop:PHOyAAl31WGcKS0xEXHsYmvw_3bFPZGa@rajje.db.elephantsql.com:5432/bgobesop"
-//					+ "","bgobesop","PHOyAAl31WGcKS0xEXHsYmvw_3bFPZGa");
+			dataSource=new DataSource("jdbc:postgresql://rajje.db.elephantsql.com:5432/bgobesop"
+				+ "","bgobesop","PHOyAAl31WGcKS0xEXHsYmvw_3bFPZGa");
 		} 
 		catch (Exception e) {
 			System.err.println("PostgresDAOFactory.class: failed to load MySQL JDBC driver\n"+e);
@@ -62,28 +58,17 @@ private static DBManager instance = null;
 		if (getClienteDAO().loginRicerca(usernameN, passwordN) == true) {
 			return un;
 			}
-//		if (usernameN.equals("ilaria") && passwordN.equals("ilaria") ) {
-//			System.out.println("sei un cliente");
-//			UtenteNor un = new UtenteNor();
-//			un.setUsername("ilaria");
-//			un.setPassword("ilaria");
-//			return un;
-//		}
-//		return null;
 		return null;
 	}
 	
 	public Utente login(String username, String password) {
 		Utente u = new Utente();
-		
 		if (username.equals("admin") && password.equals("password")) {
-			
 			u.setUsername("admin");
 			u.setPassword("password");
-			
+			return u;
 		}
 		return null;
-		
 	}
 
 

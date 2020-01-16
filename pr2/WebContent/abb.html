@@ -22,11 +22,16 @@
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	  <script>
 	 
-	 
+	  $(document).ready(function() {
+		    $('.it-date-datepicker').datepicker({
+		      inputFormat: ["dd/MM/yyyy"],
+		      outputFormat: 'dd/MM/yyyy',
+		    });
+		});
 		
-  $( function() {
+ /*  $( function() {
     $( "#datepicker" ).datepicker();
-  } );
+  } ); */
   </script>
 </head>
 
@@ -79,19 +84,18 @@
             	<h4>Fissa un appuntamento con noi: </h4>
             		<!-- RD Mailform-->
         		
-        		<form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
+        		<!-- <form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
      				<div class="row row-20 row-fix">
-   						<div class="col-sm-12">
+                      <div class="col-sm-12">
                         <label class="form-label-outside">Voglio fare un orlo al: </label>
                         <div class="form-wrap form-wrap-inline">
-
                           <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta1">
-                            <option value="6">    </option>
-                            <option value="1">Pantalone</option>
-                            <option value="2">Giacca</option>
-                            <option value="3">Camicia</option>
-                            <option value="4">Abito</option>
-                            <option value="5">Abito da sposa</option>  
+                            <option value=" ">    </option>
+                            <option value="Pantalone">Pantalone</option>
+                            <option value="Giacca">Giacca</option>
+                            <option value="Camicia">Camicia</option>
+                            <option value="Abito">Abito</option>
+                            <option value="Abito da sposa">Abito da sposa</option> 
                           </select>
                         </div>
                       </div>
@@ -100,13 +104,12 @@
                         <label class="form-label-outside">Voglio stringere:</label>
                         <div class="form-wrap form-wrap-inline">
                          <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta2">
-							<option value="6">    </option>
-                            <option value="1">Pantalone</option>
-                            <option value="2">Giacca</option>
-                            <option value="3">Camicia</option>
-                            <option value="4">Abito</option>
-                            <option value="5">Abito da sposa</option>
-                            
+							<option value=" ">    </option>
+                            <option value="Pantalone">Pantalone</option>
+                            <option value="Giacca">Giacca</option>
+                            <option value="Camicia">Camicia</option>
+                            <option value="Abito">Abito</option>
+                            <option value="Abito da sposa">Abito da sposa</option>     
                           </select>
                         </div>
                       </div>
@@ -115,14 +118,14 @@
                         <label class="form-label-outside">Voglio che mi crei il modello:</label>
                         <div class="form-wrap form-wrap-inline">
                           <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta3">
-                          <option value="7">    </option>
-                            <option value="1">Abito 1</option>
-                            <option value="2">Abito 2</option>
-                            <option value="3">Abito 3</option>
-                            <option value="4">Abito 4</option>
-                            <option value="5">Abito 5</option>
-                            <option value="6">Abito 6</option>
-                           
+                          <option value=" ">    </option>
+                            <option value="Abito 1">Abito 1</option>
+                            <option value="Abito 2">Abito 2</option>
+                            <option value="Abito 3">Abito 3</option>
+                            <option value="Abito 4">Abito 4</option>
+                            <option value="Abito 5">Abito 5</option>
+                            <option value="Abito 6">Abito 6</option>
+  
                           </select>
                         </div>
                       </div>
@@ -143,7 +146,65 @@
         	<button name="invia" style="position:absolute;top:330px;left:300px">Prenota appuntamento </button>
         	
 			</form>
-			
+	 -->
+	 <form id="moduloselezione1" method="post" action="inviaDatiOrdine" class="moduloRegistrazioneOrdine">
+  <!-- <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div> -->
+
+  <div class="form-group">
+    <label class="form-label-outside">Voglio fare un orlo al: </label>
+     <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta1">
+     	<option value=" ">    </option>
+        <option value="Pantalone">Pantalone</option>
+        <option value="Giacca">Giacca</option>
+        <option value="Camicia">Camicia</option>
+        <option value="Abito">Abito</option>
+        <option value="Abito da sposa">Abito da sposa</option> 
+      </select>
+  </div>
+    <div class="form-group">
+    <label class="form-label-outside">Voglio stringere:</label>
+     <select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta2">
+		<option value=" ">    </option>
+        <option value="Pantalone">Pantalone</option>
+        <option value="Giacca">Giacca</option>
+        <option value="Camicia">Camicia</option>
+        <option value="Abito">Abito</option>
+        <option value="Abito da sposa">Abito da sposa</option>     
+       </select>
+       </div>
+  <div class="form-group">
+   <label class="form-label-outside">Voglio che mi crei il modello:</label>
+  	<select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" name="scelta3">
+    <option value=" ">    </option>
+    <option value="Abito 1">Abito 1</option>
+    <option value="Abito 2">Abito 2</option>
+    <option value="Abito 3">Abito 3</option>
+    <option value="Abito 4">Abito 4</option>
+    <option value="Abito 5">Abito 5</option>
+    <option value="Abito 6">Abito 6</option>
+    </select> 
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Commento</label>
+    <input class="form-control" name="commento" type="text" />
+    <small id="emailHelp" class="form-text text-muted">Compila solo se vuoi lasciare una nota alla sarta.</small>
+  </div>
+  
+<div class="it-datepicker-wrapper">
+  <div class="form-group">
+	<label class="form-label-outside">Inserisci una data per prendere una appuntamento con la sartoria (lasciare un capo/ prendere misure).</label>
+	<input class="form-control it-date-datepicker" id="date1" name="data" type="text" placeholder="inserisci la data in formato gg/mm/aaaa">
+	</div>
+</div>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button name="invia" class="btn btn-primary">Ordina</button>     	
+</form>		
 			</div>
 			
         	 </div>
@@ -154,10 +215,6 @@
         	</div>
         	</div>
         	
-      <li></li><li></li><li></li>
-      
-      
-
 <section class="section section-variant-1 bg-default novi-background bg-cover"> 
         <div class="container container-wide">
           <div class="row row-fix justify-content-xl-end row-30 text-center text-xl-left">
@@ -274,7 +331,9 @@
         <!--/.container--> 
     </div>
     <!--/.footer-->
-                          
+   </div>  
+   </footer>
+                      
     <div class="footer-bottom">
         <div class="container">
             <p class="pull-left copyright"> Copyright © Footer 2014. All right reserved. </p>
@@ -283,6 +342,6 @@
     </div>
     <!--/.footer-bottom--> 
 
-</footer>
+
   </body>
 </html>

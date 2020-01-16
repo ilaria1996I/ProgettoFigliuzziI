@@ -79,10 +79,13 @@
 				Codice
 			</th>
 			<th>
-				Azione 1
+				Devo stringere
 			</th>
 			<th>
-				Azione 2
+				Devo fare il modello
+			</th>
+			<th>
+				Devo fare il orlo
 			</th>
 			<th>
 				Commento
@@ -110,14 +113,15 @@
 					${ordine.voglioCheMiCreiIlModello}
 				</td>
 				<td>
+					${ordine.voglioFareUnOrdineAl}
+				</td>
+				<td>
 					${ordine.commento}
 				</td>
 				<td>
 					${ordine.data}
 				</td>
-				<td>
-					${ordine.voglioFareUnOrdineAl}
-				</td>
+				
 			</tr>
 		</c:forEach>
 		</table>
