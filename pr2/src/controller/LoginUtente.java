@@ -34,7 +34,6 @@ public class LoginUtente extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usernameN = request.getParameter("username");
 		String passwordN = request.getParameter("password");
-		System.out.println(usernameN + passwordN);
 		UtenteNor utenteNor = DBManager.getInstance().loginNor(usernameN, passwordN);
 		if (utenteNor != null) {
 			request.getSession().setAttribute("utenteNor", utenteNor);

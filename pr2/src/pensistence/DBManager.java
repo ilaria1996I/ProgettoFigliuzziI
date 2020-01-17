@@ -53,7 +53,6 @@ private static DBManager instance = null;
 	
 	//utente cliente
 	public UtenteNor loginNor(String usernameN, String passwordN) {
-		System.out.println(usernameN + passwordN);
 		UtenteNor un = new UtenteNor();
 		if (getClienteDAO().loginRicerca(usernameN, passwordN) == true) {
 			return un;
@@ -72,12 +71,12 @@ private static DBManager instance = null;
 	}
 
 
-	public void  inserisciStudente(Clienti cliente) {
+	public void  inserisciCliente(Clienti cliente) {
 		getClienteDAO().save(cliente);
 		
 	}
 
-	public List<Clienti> dammiStudenti() {
+	public List<Clienti> dammiClienti() {
 		return getClienteDAO().findAll();
 	}
 	

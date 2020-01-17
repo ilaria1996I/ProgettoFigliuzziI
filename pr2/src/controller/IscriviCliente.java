@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Clienti;
 import pensistence.DBManager;
 
-public class IscriviStudente extends HttpServlet{
+public class IscriviCliente extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nome = req.getParameter("nome");
@@ -19,17 +19,17 @@ public class IscriviStudente extends HttpServlet{
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		
-		Clienti stud = new Clienti();
-		stud.setNome(nome);
-		stud.setCognome(cognome);
-		stud.setEmail(email);
-		stud.setPassword(password);
+		Clienti clie = new Clienti();
+		clie.setNome(nome);
+		clie.setCognome(cognome);
+		clie.setEmail(email);
+		clie.setPassword(password);
 		
-			DBManager.getInstance().inserisciStudente(stud);
+			DBManager.getInstance().inserisciCliente(clie);
 		
-		req.setAttribute("studenteRegistrato", stud);
+		req.setAttribute("clienteRegistrato", clie);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("ottieniStudenti");
+		RequestDispatcher rd = req.getRequestDispatcher("ottieniClienti");
 		rd.forward(req, resp);
 		}
 }

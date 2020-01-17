@@ -15,7 +15,7 @@ import pensistence.DBManager;
 public class DammiFuturiA extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Clienti> clienti = DBManager.getInstance().dammiStudenti();
+		List<Clienti> clienti = DBManager.getInstance().dammiClienti();
 		
 		req.setAttribute("studenti", clienti);
 		

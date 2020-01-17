@@ -19,7 +19,6 @@ public class DammiOrdine extends HttpServlet{
 		
 		RequestDispatcher rd = req.getRequestDispatcher("ottieniOrdini.jsp");
 		rd.forward(req, resp);
-		System.out.println("dammi ordini");
 		
 }
 	

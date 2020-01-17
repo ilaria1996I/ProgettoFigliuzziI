@@ -58,22 +58,22 @@
   </servlet-mapping>  
 
    <servlet>
-  	<servlet-name>PrendiStudenti</servlet-name>
+  	<servlet-name>PrendiClienti</servlet-name>
   	<servlet-class>controller.DammiFuturiA</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  	<servlet-name>PrendiStudenti</servlet-name>
-  	<url-pattern>/gestioneStudenti/ottieniStudenti</url-pattern>
+  	<servlet-name>PrendiClienti</servlet-name>
+  	<url-pattern>/gestioneClienti/ottieniClienti</url-pattern>
   </servlet-mapping>
 <servlet>
-  	<servlet-name>IscrizioneStudente</servlet-name>
-  	<servlet-class>controller.IscriviStudente</servlet-class>
+  	<servlet-name>IscrizioneCliente</servlet-name>
+  	<servlet-class>controller.IscriviCliente</servlet-class>
 </servlet>
   
   <servlet-mapping>
-  	<servlet-name>IscrizioneStudente</servlet-name>
-  	<url-pattern>/gestioneStudenti/inviaDatiStudente</url-pattern>
+  	<servlet-name>IscrizioneCliente</servlet-name>
+  	<url-pattern>/gestioneClienti/inviaDatiCliente</url-pattern>
   </servlet-mapping>  
 
 </web-app>

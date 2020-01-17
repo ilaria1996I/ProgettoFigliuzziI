@@ -32,7 +32,7 @@
 		<!-- Collapsible Navbar -->
 		<div class="collapse navbar-collapse" id="example-1">
 
-			<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
+			<li><a href="http://localhost:8080/pr/gestioneClienti/iscriviClienti.html">Registrati</a></li>
 			<ul class="nav navbar-nav">
 				<li class="active">
 				<a href="http://localhost:8080/pr">Home <span class="sr-only">(current)</span></a></li>
@@ -41,7 +41,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 			
-			<li><a href="http://localhost:8080/pr/gestioneStudenti/iscriviStudenti.html">Registrati</a></li>
+			<li><a href="http://localhost:8080/pr/gestioneClienti/iscriviClienti.html">Registrati</a></li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Login<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -57,7 +57,7 @@
 	
 	</div>
 </nav>
-	<c:if test="${studenteRegistrato != null}">
+	<c:if test="${clienteRegistrato != null}">
 			</c:if>
 	<header>
 		<h1>Elenco Clienti</h1>
@@ -78,7 +78,7 @@
 			</th>
 		</tr>
 		<c:set var = "cont" scope = "request" value ="${0}" />
-		<c:forEach items="${studenti}" var="studente">
+		<c:forEach items="${clienti}" var="cliente">
 		 	<c:set var = "cont" scope = "request" value ="${cont + 1}" />
 			<c:set var = "colore"  scope = "request" value ="warning" />
 			<c:if test="${cont % 2 == 0}">
@@ -87,16 +87,16 @@
 			
 			<tr class="${colore}">
 				<td>
-					${studente.nome}
+					${cliente.nome}
 				</td>
 				<td>
-					${studente.cognome}
+					${cliente.cognome}
 				</td>
 				<td>
-					${studente.email}
+					${cliente.email}
 				</td>
 				<td>
-					${studente.password}
+					${cliente.password}
 				</td>
 			</tr>
 		</c:forEach>

@@ -32,7 +32,6 @@ public class Login extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-		System.out.println(username + password);
 		Utente utente = DBManager.getInstance().login(username, password);
 		if (utente != null) {
 			req.getSession().setAttribute("utente", utente);
