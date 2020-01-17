@@ -30,7 +30,6 @@ public class LoginUtente extends HttpServlet{
 		}
 	}
 	
-	//il login è già fatto?
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String usernameN = request.getParameter("username");
@@ -42,7 +41,7 @@ public class LoginUtente extends HttpServlet{
 			RequestDispatcher rd = request.getRequestDispatcher("");
 			rd.forward(request, response);
 		}else {
-			RequestDispatcher rd = request.getRequestDispatcher("loginError.html");
+			RequestDispatcher rd = request.getRequestDispatcher("loginErrorUt.html");
 			rd.forward(request, response);
 		}
 	}

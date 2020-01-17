@@ -31,7 +31,5 @@ public class IscriviStudente extends HttpServlet{
 		
 		RequestDispatcher rd = req.getRequestDispatcher("ottieniStudenti");
 		rd.forward(req, resp);
-		
-		System.out.println("da iscriviStudente "+nome + " " + cognome + " " + " "+ email + " "+password);
-	}
+		}
 }

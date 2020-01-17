@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Registrazione</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+<html lang="en">
+<head>
+<title>Login utente</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="-../fontsR/material-design-iconic-font/css/material-design-iconic-font.min.css">
-		
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="../cssR/style.css">
-		
-<link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/fother.css">
-	</head>
-
-<body background="1/sfondoAbb1.jpg">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+    <link rel="stylesheet" href="css/fother.css">
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
 <nav class="navbar navbar-default">
- <div class="container-fluid">
+	<div class="container-fluid">
 	
 		<!-- Brand/logo -->
 		<div class="navbar-header">
@@ -59,37 +70,50 @@
 	
 	</div>
 </nav>
-		<div class="wrapper" style="background-image: url('images/bg-registration-form-2.jpg');">
-			<div class="inner">
-				<form id="modulo1" method="post" action="inviaDatiStudente" class="moduloRegistrazione">
-					<h3>Registration Form</h3>
-					<div class="form-group">
-						<div class="form-wrapper">
-							<label for="">First Name</label>
-							<input  class="campo" name="nome" type="text" value="nome" placeholder="nome"/>
-						</div>
-						<div class="form-wrapper">
-							<label for="">Last Name</label>
-							<input  class="campo"  name="cognome" type="text" value="Cognome" placeholder="Cognome"/>
-						</div>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Email</label>
-						<input class="campo" name="email" type="text" placeholder="Email" required="" value="Email" />
-					</div>
-					<div class="form-wrapper">
-						<input  class="campo" name="password" type="password" placeholder="Password"/>
-					</div>
-					<div class="form-wrapper">
-						<label for="">Confirm Password</label>
-						<input  name="password2" type="password" placeholder="Password">
-					</div>
-					
-					<button>Register Now</button>
-				</form>
+
+<div class="alert alert-danger" role="alert">
+Attenzione non sei registrato con questi dati!
+</div>
+
+		
+<div class="limiter">
+	 <div class="container-login100" style="background-image: url('images/sfondoAbb1.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+ 
+ <form method="POST" class="form-horizontal" action="logUtente" >
+			<div class="form-group">
+			<label class="control-label col-sm-2" for="username">username</label>
+			<div class="col-sm-20">
+				<input class="form-control" name="username" type="text" />
 			</div>
 		</div>
- 	<footer>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="password">password</label>
+			<div class="col-sm-20">
+				<input class="form-control" name="password" type="password" />
+			</div>
+		</div>
+
+		<div class="text-right p-t-8 p-b-31">
+						<a href="#">
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+
+	</form>	
+			</div>
+		</div>
+	</div>
+	<footer>
     <div class="footer" id="footer">
         <div class="container">
             <div class="row">
@@ -114,8 +138,11 @@
                     </ul>
                 </div>
                
+            <!--/.row--> 
         </div>
+        <!--/.container--> 
     </div>
+    <!--/.footer-->
                           
     <div class="footer-bottom">
         <div class="container">
@@ -123,8 +150,8 @@
        
         </div>
     </div>
-    </div>
+    <!--/.footer-bottom--> 
 
-</footer> 
-	</body>
+</footer>
+</body>
 </html>

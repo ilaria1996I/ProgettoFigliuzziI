@@ -6,7 +6,6 @@
   <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
@@ -25,11 +24,12 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fother.css">
-    <link rel="load" href="css/loadingPage.css">
-    <script src="js/main.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/load.js"></script>  
-    <link rel="stylesheet" href="loadingPage.css">
+	
+    <script src="js/main.js"></script> 
+
+	
+
+
   </head>
 
 

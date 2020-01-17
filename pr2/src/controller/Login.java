@@ -28,7 +28,6 @@ public class Login extends HttpServlet{
 		}
 	}
 	
-	//il login è già fatto?
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String username = req.getParameter("username");
@@ -37,12 +36,10 @@ public class Login extends HttpServlet{
 		Utente utente = DBManager.getInstance().login(username, password);
 		if (utente != null) {
 			req.getSession().setAttribute("utente", utente);
-//			RequestDispatcher rd = req.getRequestDispatcher("gestioneOrdini/ottieniOrdini.jsp");
-//			rd.forward(req, resp);
 			RequestDispatcher rd = req.getRequestDispatcher("gestioneOrdini/ottieniOrdini");
 			rd.forward(req, resp);
 		}else {
-			RequestDispatcher rd = req.getRequestDispatcher("loginError.html");
+			RequestDispatcher rd = req.getRequestDispatcher("loginErrorAm.html");
 			rd.forward(req, resp);
 		}	
 	}

@@ -72,7 +72,7 @@ e.printStackTrace();
 		return ordine;
 	}
 	
-//ottieni jsp
+
 	public List<Ordine> findAll() {
 		Connection connection = null;
 		List<Ordine> ord = new LinkedList<>();
@@ -105,8 +105,4 @@ e.printStackTrace();
 		}
 		return ord;
 	}
-
-
-
-	
 }

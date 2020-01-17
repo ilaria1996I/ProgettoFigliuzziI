@@ -98,6 +98,4 @@ private static DBManager instance = null;
 	public OrdineDaoJDBC getOrdineDAO() {
 		return new OrdineDaoJDBC(dataSource);
 	}
-	
-	
 }

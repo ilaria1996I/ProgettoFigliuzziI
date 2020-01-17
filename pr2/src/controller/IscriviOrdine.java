@@ -27,7 +27,6 @@ public class IscriviOrdine extends HttpServlet{
 		ord.setVoglioFareUnOrdineAl(scelta1);
 		ord.setVoglioCheMiCreiIlModello(scelta3);
 		ord.setData(data2);
-		System.out.println("orlo "+scelta1+"     stringere "+ scelta2+"   modello "+scelta3);
 		
 		DBManager.getInstance().inserisciOrdine(ord);
 		

@@ -19,9 +19,6 @@ public class DammiFuturiA extends HttpServlet{
 		
 		req.setAttribute("studenti", clienti);
 		
-//		RequestDispatcher rd = req.getRequestDispatcher("ottieniStudenti.jsp");
-//		rd.forward(req, resp);
-		
 		RequestDispatcher rd = req.getRequestDispatcher("futuriA.html");
 		rd.forward(req, resp);
 		
