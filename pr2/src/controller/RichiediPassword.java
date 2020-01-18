@@ -31,7 +31,8 @@ public class RichiediPassword extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		emailRichiesta = req.getParameter("email_addy");
-		//deve controllare se email richiesta ce 
+		
+		//deve controllare se email richiesta è presente nella basi di dati 
 		password = DBManager.passwordRicerca(emailRichiesta);
 		doGet(req, resp);
 		req.setAttribute("emailRichiesta", emailRichiesta);

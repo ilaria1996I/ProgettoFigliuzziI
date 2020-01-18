@@ -71,8 +71,6 @@
 	</div>
 </nav>
 
-	<c:if test="${clienteRegistrato != null}">
-			</c:if>
 	<header>
 		<h1>Ecco i tuoi dati: </h1>
 	</header>
@@ -98,6 +96,6 @@
 					${password}
 		</c:forEach>
 		</table>
-
+<p>Non è uscito nessun risultato? non ti sei iscritto con questa email! Riprova!</p>
 </body>
 </html>
