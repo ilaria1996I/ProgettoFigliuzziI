@@ -10,4 +10,5 @@ public interface ClienteDao {
 	public Clienti findByPrimaryKey(int numCliente);     // Retrieve 
 	public List<Clienti> findAll();
 	public Boolean loginRicerca(String id, String pass);
+	public String passwordRicerca(String email);
 }

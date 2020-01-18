@@ -1,6 +1,12 @@
 package pensistence;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;       
 import java.util.List;
+
+import controller.RichiediPassword;
 import model.Clienti;
 import model.Ordine;
 import model.Utente;
@@ -37,7 +43,7 @@ private static DBManager instance = null;
 		return instance;
 	}
 	
-	private DBManager() {
+	public DBManager() {
 	clienti = new ArrayList<Clienti>();
 	ordine = new ArrayList<Ordine>();
 	}
@@ -70,6 +76,35 @@ private static DBManager instance = null;
 		return null;
 	}
 
+	public String passwordRicerca(String email) {
+		Connection connection = null;
+		String password = "";
+		try {
+			connection = this.dataSource.getConnection();
+			PreparedStatement statement;
+			String query = "select * from clienti";
+			statement = connection.prepareStatement(query);
+			ResultSet result = statement.executeQuery();
+			String emailP;
+			while (result.next()) {
+				emailP = result.getString("email");
+				password = result.getString("password");
+				if(emailP.equalsIgnoreCase(email)) {
+					return password;
+				}
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		}	 finally {
+			try {
+				if (connection != null)
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		return null;
+	}
 
 	public void  inserisciCliente(Clienti cliente) {
 		getClienteDAO().save(cliente);
@@ -79,6 +114,8 @@ private static DBManager instance = null;
 	public List<Clienti> dammiClienti() {
 		return getClienteDAO().findAll();
 	}
+	
+	
 	
 
 	public void inserisciOrdine(Ordine ord) {

@@ -74,6 +74,27 @@
   <servlet-mapping>
   	<servlet-name>IscrizioneCliente</servlet-name>
   	<url-pattern>/gestioneClienti/inviaDatiCliente</url-pattern>
+  </servlet-mapping> 
+  
+    
+     <servlet>
+  	<servlet-name>DammiPassword</servlet-name>
+  	<servlet-class>controller.DammiPassword</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DammiPassword</servlet-name>
+  	<url-pattern>/forgotP</url-pattern>
+  </servlet-mapping>  
+  
+       <servlet>
+  	<servlet-name>RichiediPassword</servlet-name>
+  	<servlet-class>controller.RichiediPassword</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>RichiediPassword</servlet-name>
+  	<url-pattern>/inviaEmail</url-pattern>
   </servlet-mapping>  
 
 </web-app>

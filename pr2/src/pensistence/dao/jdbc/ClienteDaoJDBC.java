@@ -136,4 +136,34 @@ public class ClienteDaoJDBC implements ClienteDao {
 		}
 		return false;
 	}
+	
+	public String passwordRicerca(String email) {
+		Connection connection = null;
+		String password = "";
+		try {
+			connection = this.dataSource.getConnection();
+			PreparedStatement statement;
+			String query = "select * from clienti";
+			statement = connection.prepareStatement(query);
+			ResultSet result = statement.executeQuery();
+			String emailP;
+			while (result.next()) {
+				emailP = result.getString("email");
+				password = result.getString("password");
+				if(emailP.equalsIgnoreCase(email)) {
+					return password;
+				}
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		}	 finally {
+			try {
+				if (connection != null)
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		return null;
+	}
 }
